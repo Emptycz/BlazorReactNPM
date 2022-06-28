@@ -1,0 +1,15 @@
+@page "/react"
+@inject IJSRuntime Jsr
+
+
+<PageTitle>React page</PageTitle>
+
+<div id="reactHelloWorld"></div>
+
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        await Jsr.InvokeVoidAsync("RComponents.RenderHelloWorldBox");
+    }
+}
